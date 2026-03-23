@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Easy Tech Solutions - Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE */
+.left {
+    width: 50%;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left h1 {
+    font-size: 40px;
+}
+
+.left p {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.tagline {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fa;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+.social {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.social span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="left">
+    <h1>Welcome to Easy Tech Solutions</h1>
+    <p>
+        Empowering digital transformation through scalable automation,
+        intelligent testing, and secure software delivery.
+    </p>
+
+    <ul>
+        <li>Automation Testing</li>
+        <li>QA & Performance Engineering</li>
+        <li>DevOps & CI/CD</li>
+        <li>Secure Development</li>
+    </ul>
+
+    <p class="tagline">"Engineering Quality. Delivering Confidence."</p>
+</div>
+
+<div class="right">
+    <div class="form-box">
+        <h2>Login</h2>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <div class="social">
+            <span>🌐 Google</span>
+            <span>💻 GitHub</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "" || pass === "") {
+        alert("Please enter credentials");
+    } else {
+        localStorage.setItem("username", user);
+        window.location.href = "dashboard.html";
+    }
+}
+</script>
+
+</body>
+</html>
